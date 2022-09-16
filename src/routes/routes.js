@@ -1,15 +1,15 @@
 const express = require('express');
-const pacienteController = require('../controller/pacienteController');
+const patientController = require('../controller/patientController');
 const authController = require ("../controller/authController");
 const authLoginValidation = require ("../validations/login");
 
 const routes = express.Router();
 
-routes.post('/pacientes',pacienteController.cadastrarPaciente);
-routes.get('/pacientes',pacienteController.listarPacientes);
-routes.get('/pacientes/:id',pacienteController.listarPacienteId);
-routes.put('/pacientes/:id',pacienteController.atualizarPaciente);
-routes.delete('/pacientes/:id',pacienteController.deletarPaciente);
+routes.post('/patients',patientController.registerPatient);
+routes.get('/patients',patientController.listPatients);
+routes.get('/patients/:id',patientController.listPatientId);
+routes.put('/patients/:id',patientController.updatePatient);
+routes.delete('/patients/:id',patientController.deletePatient);
 
 
 module.exports = routes;
