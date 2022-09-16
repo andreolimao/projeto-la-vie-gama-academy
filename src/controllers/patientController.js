@@ -1,4 +1,4 @@
-const { Pacientes } = require('../models');
+const { Patients } = require('../models/Patients');
 
 const patientController = {
     registerPatient: async (req, res) => {
