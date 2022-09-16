@@ -1,35 +1,35 @@
 const { Pacientes } = require('../models');
 
-const pacienteController = {
-    cadastrarPaciente: async (req, res) => {
+const patientController = {
+    registerPatient: async (req, res) => {
         try {
             const {nome, email, idade} = req.body;
             if(!nome || !email || !idade) return res.status(400).json('Preencha todos os campos!');
 
-            const newPaciente = await Pacientes.create({
+            const newPatient = await Patients.create({
                 nome,
                 email,
                 idade,
             });
-            res.status(201).json(novoPaciente);
+            res.status(201).json(newPatient);
                  
         } catch (err) {
             console.error(err);
         }    
     },
 
-    listarPacientes: async (req, res) => {
+    listPatients: async (req, res) => {
         try {
-            const listarPacientes = await Pacientes.findAll();
+            const listPatients = await Patients.findAll();
 
-            res.status(200).json(listarPacientes);
+            res.status(200).json(listPatients);
         } catch (err) {
             console.error(err);
         }
         
     },
 
-    listarPacienteId: async (req, res) => {
+    listPatientId: async (req, res) => {
         try {
             const { id } = req.params;
         
